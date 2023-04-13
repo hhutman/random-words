@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetry One</title>
+</head>
+
+<div id="random-words"></div>
+<div style="display: flex; justify-content: center; margin-top: 10%">
+<button onclick="displayRandomWords()">how many random words do you want to see?</button>
+</div>
+
+  <script>
+// Define the text of Romeo and Juliet as a string
+var text = "households, mutiny, civil blood civil hands unclean. lovers life; TRUMP "
+
+// Split the text into an array of individual words
+var words = text.split(/[ ,.;]+/);
+
+function displayRandomWords() {
+  // Get the element to display the random words
+  var randomWordsDiv = document.getElementById("random-words");
+
+  // Prompt the user to enter the number of times to display the nonsense text
+  var numTimes = prompt("how many words?:");
+
+  // Convert the input to a number
+  numTimes = parseInt(numTimes);
+
+  // Clear the previous content of the div
+  randomWordsDiv.innerHTML = "";
+
+  // Loop through the array and display random words in the div
+  for (var i = 0; i < numTimes; i++) {
+    // Generate a random index from 0 to the length of the array
+    var randomIndex = Math.floor(Math.random() * words.length);
+
+    // Get the random word from the array
+    var randomWord = words[randomIndex];
+
+    // Add the random word to the div
+    randomWordsDiv.innerHTML += randomWord + " ";
+  }
+}
+
+
+  </script>
+</body>
+</html>
